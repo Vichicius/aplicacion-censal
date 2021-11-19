@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDomicilioTable extends Migration
+class CreateCpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateDomicilioTable extends Migration
      */
     public function up()
     {
-        Schema::create('domicilio', function (Blueprint $table) {
+        Schema::create('cps', function (Blueprint $table) {
             $table->id();
-            $table->string('Calle',150);
-            $table->string('Numero',30);
             $table->string('CP');
-            $table->foreignId('cp_id')->constrained();
-            $table->timestamps();
+            $table->foreignId('localidad_id')->constrained();
         });
     }
 
@@ -30,6 +27,6 @@ class CreateDomicilioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('domicilio');
+        Schema::dropIfExists('cps');
     }
 }

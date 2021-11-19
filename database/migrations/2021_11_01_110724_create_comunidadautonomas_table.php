@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComunidadAutonomaTable extends Migration
+class CreateComunidadautonomasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateComunidadAutonomaTable extends Migration
      */
     public function up()
     {
-        Schema::create('comunidad_autonoma', function (Blueprint $table) {
+        Schema::create('comunidadautonomas', function (Blueprint $table) {
             $table->id();
-            $table->string('Comunidad Autonoma');
-            $table->string('Provincia');
-            
+            $table->string('Comunidad_autonoma');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateComunidadAutonomaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comunidad_autonoma');
+        Schema::dropIfExists('comunidadautonomas');
     }
 }
